@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>六十四卦</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Roboto+Mono&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-        <link rel="manifest" href="site.webmanifest">
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <div class="main">
-            <h1>六十四卦</h1>
-            <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
-            <div class="buttons">
-                <button onclick="encode()" class="encode">↓卜卦</button>
-                <button onclick="decode()" class="decode">启示↑</button>
-            </div>
-            <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput" style="height: 350px;"></textarea>
-            <p style="margin-top: 80px;">
-                Published under MIT License.<br>
-                By PrunusSerrulata, 2021.
-            </p>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六十四卦</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                    .then(function (registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function (err) {
+                        console.log('ServiceWorker registration failed');
+                    });
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <h1>六十四卦</h1>
+        <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
+        <div class="buttons">
+            <button onclick="encode()" class="encode">↓卜卦</button>
+            <button onclick="decode()" class="decode">启示↑</button>
         </div>
-    </body>
+        <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput"
+            style="height: 350px;"></textarea>
+        <p style="margin-top: 80px;">
+            Published under MIT License.<br>
+            By PrunusSerrulata, 2021.
+        </p>
+    </div>
+</body>
+
 </html>
