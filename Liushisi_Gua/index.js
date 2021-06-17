@@ -30,6 +30,16 @@ function guatoB64(str) {
 
 
 window.onload = function () {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/Liushisi_Gua/sw.js')
+            .then(function (registration) {
+                console.log('ServiceWorker registration successed!');
+            })
+            .catch(function (err) {
+                console.log('ServiceWorker registration failed!');
+            });
+    }
+
     plainTextarea = document.getElementById("plain")
     cipherTextarea = document.getElementById("cipher")
 }

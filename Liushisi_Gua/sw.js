@@ -1,9 +1,9 @@
-var CACHE_VERSION = 'sw_v1';
+var CACHE_VERSION = 'liushisigua_v1';
 var CACHE_FILES = [
-    './',
-    './index.html',
-    './index.js',
-    './index.css'
+    '/Liushisi_Gua/',
+    '/Liushisi_Gua/index.html',
+    '/Liushisi_Gua/index.js',
+    '/Liushisi_Gua/index.css'
 ];
 
 //监听安装事件
