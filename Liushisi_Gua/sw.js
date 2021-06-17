@@ -6,70 +6,40 @@ var CACHE_FILES = [
     '/Liushisi_Gua/index.css'
 ];
 
-//监听安装事件
 self.addEventListener('install', function (event) {
+    console.log('[Service Worker] Installing');
     event.waitUntil(
         caches.open(CACHE_VERSION)
-            .then(cache => cache.addAll(CACHE_FILES)
-                .then(() => self.skipWaiting())
-            ));
+            .then(function (cache) {
+                console.log('[Service Worker] Caching all content')
+                return cache.addAll(CACHE_FILES)
+            })
+    );
 });
 
-//监听激活事件
 self.addEventListener('activate', function (event) {
     event.waitUntil(
         caches.keys().then(function (keys) {
-            return Promise.all(keys.map(function (key, i) {
-                if (key !== CACHE_VERSION) {
-                    return caches.delete(keys[i]);
+            return Promise.all(keys.map(function (key) {
+                if (CACHE_FILES.indexOf(key) === -1) {
+                    return caches.delete(key)
                 }
             }));
         })
     );
 });
 
-//最佳策略
-var CURRENT_CACHES = {
-    prefetch: 'prefetch-cache-v' + 1,
-};
-var FILE_LISTS = ['js', 'css'];
-
-var goSaving = function (url) {
-    for (var file of FILE_LISTS) {
-        if (url.endsWith(file)) return true;
-    }
-    return false;
-}
-
 self.addEventListener('fetch', function (event) {
     event.respondWith(
-        caches.match(event.request).then(function (resp) {
-            return resp || fetch(event.request).then(function (response) {
-                // 检查是否需要缓存
-                var url = event.request.url;
-                if (!goSaving(url)) return response;
-                console.log('save file:' + url);
-                // 需要缓存,则将资源放到 caches Object 中
-                return caches.open(CURRENT_CACHES.prefetch).then(function (cache) {
-                    console.log('update files like' + event.request.url);
-                    cache.put(event.request, response.clone());
-                    return response;
-                });
+        caches.match(event.request).then(function (r) {
+            console.log('[Service Worker] Fetching resource: ' + e.request.url);
+            return r || fetch(event.request).then(function (response) {
+                return caches.open(CACHE_FILES).then(function (cache) {
+                    console.log('[Service Worker] Caching new resource: ' + e.request.url);
+                    cache.put(e.request, response.clone())
+                    return response
+                })
             });
         })
     );
-});
-self.addEventListener('message', event => {
-    console.log("receive message" + event.data);
-    // 更新根目录下的 html 文件。
-    var url = event.data;
-    console.log("update root file " + url);
-    event.waitUntil(
-        caches.open(CURRENT_CACHES.prefetch).then(cache => {
-            return fetch(url)
-                .then(res => {
-                    cache.put(url, res);
-                })
-        })
-    )
 });

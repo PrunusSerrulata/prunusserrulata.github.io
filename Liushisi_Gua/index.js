@@ -33,10 +33,10 @@ window.onload = function () {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/Liushisi_Gua/sw.js')
             .then(function (registration) {
-                console.log('ServiceWorker registration succeeded!');
+                console.log('[Service Worker] Registration succeeded');
             })
             .catch(function (err) {
-                console.log('ServiceWorker registration failed!');
+                console.log('[Service Worker] registration failed');
             });
     }
 
