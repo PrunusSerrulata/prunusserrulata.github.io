@@ -1,7 +1,7 @@
 var CACHE_VERSION = 'liushisigua_v1';
 var CACHE_FILES = [
     '/Liushisi_Gua/',
-    '/Liushisi_Gua/index.html',
+    '/Liushisi_Gua/index.htm',
     '/Liushisi_Gua/index.js',
     '/Liushisi_Gua/index.css'
 ];
