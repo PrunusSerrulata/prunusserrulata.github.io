@@ -1,11 +1,11 @@
 body {
     background-color: #22272c;
+    margin: 0;
 }
 
 h1 {
     color: white;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin: 20px 0;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Noto Serif SC', serif;
@@ -34,7 +34,6 @@ p {
     font-size: 1.5em;
     display: table-cell;
     vertical-align: middle;
-    margin: auto auto;
 }
 
 .main {
