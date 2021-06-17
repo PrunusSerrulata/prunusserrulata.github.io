@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>六十四卦</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Roboto+Mono&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Noto+Sans+SC&family=Roboto+Mono&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/Liushisi_Gua/index.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/Liushisi_Gua/apple-touch-icon.png">
@@ -17,6 +17,19 @@
 </head>
 
 <body>
+    <noscript>
+        <style>
+            .main {
+                filter: blur(25px);
+            }
+        </style>
+        <div class="noscript-field">
+            <p class="noscript-warn">
+                您的浏览器不支持，或是禁用了JavaScript。<br>
+                请刷新页面、检查设置或更换浏览器重试。
+            </p>
+        </div>
+    </noscript>
     <div class="main">
         <h1>六十四卦</h1>
         <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
@@ -26,7 +39,10 @@
         </div>
         <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput"
             style="height: 350px;"></textarea>
-        <p style="margin-top: 80px;">
+        <p style="color: lightgray; margin-top: 80px;">
+            您可以将本工具添加到桌面来离线使用。<br>
+        </p>
+        <p>
             Published under MIT License.<br>
             By PrunusSerrulata, 2021.
         </p>
