@@ -3,8 +3,8 @@
 var plainTextarea, cipherTextarea
 const b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split("")
 const gua = "䷀䷁䷂䷃䷄䷅䷆䷇䷈䷉䷊䷋䷌䷍䷎䷏䷐䷑䷒䷓䷔䷕䷖䷗䷘䷙䷚䷛䷜䷝䷞䷟䷠䷡䷢䷣䷤䷥䷦䷧䷨䷩䷪䷫䷬䷭䷮䷯䷰䷱䷲䷳䷴䷵䷶䷷䷸䷹䷺䷻䷼䷽䷾䷿".split("")
-const table = Object.assign.apply({}, Array.prototype.map.call(b64, (v, i) => {return {[v]: gua[i]}}))
-const revtable = Object.assign.apply({}, Array.prototype.map.call(gua, (v, i) => {return {[v]: b64[i]}}))
+const table = Object.assign.apply({}, Array.prototype.map.call(b64, (v, i) => { return { [v]: gua[i] } }))
+const revtable = Object.assign.apply({}, Array.prototype.map.call(gua, (v, i) => { return { [v]: b64[i] } }))
 
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
@@ -30,6 +30,18 @@ function guatoB64(str) {
 
 
 window.onload = function () {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch(function (err) {
+                    console.log('ServiceWorker registration failed');
+                });
+        });
+    }
+
     plainTextarea = document.getElementById("plain")
     cipherTextarea = document.getElementById("cipher")
 }
