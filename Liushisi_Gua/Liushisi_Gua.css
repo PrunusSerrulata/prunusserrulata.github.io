@@ -1,0 +1,58 @@
+body {
+    background-color: #22272c;
+}
+
+h1 {
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2.5em;
+    letter-spacing: 0.5ch;
+    font-weight: bold;
+}
+
+.main {
+    margin: 0 auto;
+    width: min(1000px, 80%);
+    display: grid;
+}
+
+.maininput {
+    width: auto;
+    height: 200px;
+    border-radius: 10px;
+    resize: none;
+    font-family: 'Roboto Mono', 'Noto Serif SC', monospace, serif;
+    font-size: 1.125em;
+    color: white;
+    background-color: #2d343a;
+    border-color: #4e5b65;
+}
+
+.buttons {
+    display: inline-block;
+    margin: 20px auto;
+    width: 100%;
+}
+
+button {
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.125em;
+    color: white;
+    background-color: #4e5b65;
+    border-color: #647582;
+}
+
+.encode {
+    margin-left: 20%;
+}
+
+.decode {
+    float: right;
+    margin-right: 20%;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>六十四卦</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Roboto+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="Liushisi_Gua/Liushisi_Gua.css">
+        <script src="Liushisi_Gua/Liushisi_Gua.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <h1>六十四卦</h1>
+            <textarea id="plain" placeholder="原文" autocomplete="off" spellcheck="false" class="maininput"></textarea>
+            <div class="buttons">
+                <button onclick="encode()" class="encode">↓卜卦</button>
+                <button onclick="decode()" class="decode">启示↑</button>
+            </div>
+            <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput" style="height: 350px;"></textarea>
+        </div>
+    </body>
+</html>
