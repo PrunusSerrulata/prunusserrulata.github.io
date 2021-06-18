@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #f9f9f9;
 }
 
 h1 {
@@ -10,11 +11,17 @@ h1 {
     font-size: 2.5em;
     letter-spacing: 0.5ch;
     font-weight: bold;
+    color: black;
 }
 
 p {
     text-align: center;
     font-family: 'Roboto Mono', 'Noto Sans SC', monospace, sans-serif;
+    color: black;
+}
+
+.footer {
+    color: gray;
 }
 
 .noscript-field {
@@ -30,6 +37,7 @@ p {
     font-size: 1.5em;
     display: table-cell;
     vertical-align: middle;
+    color: black;
 }
 
 .main {
@@ -45,6 +53,9 @@ p {
     resize: none;
     font-family: 'Roboto Mono', 'Noto Serif SC', monospace, serif;
     font-size: 1.125em;
+    color: black;
+    background-color: #e0e0e0;
+    border-color: #c6c6c6;
 }
 
 .buttons {
@@ -58,6 +69,9 @@ button {
     border-radius: 5px;
     font-family: 'Noto Serif SC', serif;
     font-size: 1.125em;
+    color: black;
+    background-color: #c6c6c6;
+    border-color: #adadad;
 }
 
 .encode {
@@ -83,14 +97,4 @@ button {
     .noscript-warn { color: white; }
     .maininput { color: white; background-color: #2d343a; border-color: #505050; }
     button { color: white; background-color: #4e5b65; border-color: #647582; }
-}
-
-@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
-    body { background-color: #f9f9f9; }
-    h1 { color: black; }
-    p { color: black; }
-    .footer { color: gray; }
-    .noscript-warn { color: black; }
-    .maininput { color: black; background-color: #e0e0e0; border-color: #c6c6c6; }
-    button { color: black; background-color: #c6c6c6; border-color: #adadad; }
 }
