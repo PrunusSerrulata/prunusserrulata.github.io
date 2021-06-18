@@ -1,10 +1,10 @@
 "use strict";
 
 var plainTextarea, cipherTextarea
-const b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split("")
-const gua = "䷀䷁䷂䷃䷄䷅䷆䷇䷈䷉䷊䷋䷌䷍䷎䷏䷐䷑䷒䷓䷔䷕䷖䷗䷘䷙䷚䷛䷜䷝䷞䷟䷠䷡䷢䷣䷤䷥䷦䷧䷨䷩䷪䷫䷬䷭䷮䷯䷰䷱䷲䷳䷴䷵䷶䷷䷸䷹䷺䷻䷼䷽䷾䷿".split("")
-const table = Object.assign.apply({}, Array.prototype.map.call(b64, (v, i) => { return { [v]: gua[i] } }))
-const revtable = Object.assign.apply({}, Array.prototype.map.call(gua, (v, i) => { return { [v]: b64[i] } }))
+const B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split("")
+const GUA = "䷀䷁䷂䷃䷄䷅䷆䷇䷈䷉䷊䷋䷌䷍䷎䷏䷐䷑䷒䷓䷔䷕䷖䷗䷘䷙䷚䷛䷜䷝䷞䷟䷠䷡䷢䷣䷤䷥䷦䷧䷨䷩䷪䷫䷬䷭䷮䷯䷰䷱䷲䷳䷴䷵䷶䷷䷸䷹䷺䷻䷼䷽䷾䷿".split("")
+const TABLE = Object.assign.apply({}, Array.prototype.map.call(B64, (v, i) => { return { [v]: GUA[i] } }))
+const REVTABLE = Object.assign.apply({}, Array.prototype.map.call(GUA, (v, i) => { return { [v]: B64[i] } }))
 
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
@@ -20,11 +20,11 @@ function b64DecodeUnicode(str) {
 }
 
 function b64toGua(str) {
-    return Array.prototype.map.call(str, c => table[c]).join("")
+    return Array.prototype.map.call(str, c => TABLE[c]).join("")
 }
 
 function guatoB64(str) {
-    return Array.prototype.map.call(str, c => revtable[c]).join("")
+    return Array.prototype.map.call(str, c => REVTABLE[c]).join("")
 }
 
 
