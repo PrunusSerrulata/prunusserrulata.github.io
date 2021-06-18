@@ -31,7 +31,7 @@ function guatoB64(str) {
 
 window.onload = function () {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/Liushisi_Gua/sw.js')
+        navigator.serviceWorker.register('/liushisigua/sw.js')
             .then(function (registration) {
                 console.log('[Service Worker] Registration succeeded');
             })
