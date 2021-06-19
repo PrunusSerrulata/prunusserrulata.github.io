@@ -5,8 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>六十四卦</title>
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&family=Noto+Sans+SC&family=Roboto+Mono&display=swap"> -->
     <link rel="preconnect" href="https://gstatic.loli.net">
     <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;900&family=Noto+Sans+SC&family=Roboto+Mono&display=swap">
     <link rel="stylesheet" type="text/css" href="/liushisigua/index.css">
@@ -36,8 +34,8 @@
         <h1>六十四卦</h1>
         <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
         <div class="buttons">
-            <button onclick="encode()" class="encode">↓卜卦</button>
-            <button onclick="decode()" class="decode">启示↑</button>
+            <button onclick="encode()" title="将文本编码为六十四卦密文" class="encode">↓卜卦</button>
+            <button onclick="decode()" title="将六十四卦密文解码为原文" class="decode">启示↑</button>
         </div>
         <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput"
             style="height: 350px;"></textarea>
