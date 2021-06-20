@@ -61,7 +61,7 @@ p {
 .buttons {
     display: inline-block;
     margin: 20px auto;
-    width: 100%;
+    width: max-content;
 }
 
 button {
