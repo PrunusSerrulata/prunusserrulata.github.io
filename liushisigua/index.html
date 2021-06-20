@@ -7,6 +7,7 @@
     <title>六十四卦</title>
     <link rel="preconnect" href="https://gstatic.loli.net">
     <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;900&family=Noto+Sans+SC&family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="https://fonts.loli.net/icon?family=Material+Icons+Outlined">
     <link rel="stylesheet" type="text/css" href="/liushisigua/index.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/liushisigua/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/liushisigua/favicon-32x32.png">
@@ -34,8 +35,14 @@
         <h1>六十四卦</h1>
         <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
         <div class="buttons">
-            <button onclick="encode()" title="将文本编码为六十四卦密文" class="encode">↓卜卦</button>
-            <button onclick="decode()" title="将六十四卦密文解码为原文" class="decode">启示↑</button>
+            <div class="encode-complex">
+                <button onclick="encode()" title="将文本编码为六十四卦密文" class="encode-color">↓卜卦</button>
+                <button onclick="copyCipher()" title="复制密文" class="copy-button encode-color"><span class="material-icons-outlined">content_copy</span></button>
+            </div>
+            <div class="decode-complex">
+                <button onclick="copyPlain()" title="复制原文" class="copy-button decode-color"><span class="material-icons-outlined">content_copy</span></button>
+                <button onclick="decode()" title="将六十四卦密文解码为原文" class="decode-color">启示↑</button>
+            </div>
         </div>
         <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput"
             style="height: 350px;"></textarea>

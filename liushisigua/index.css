@@ -67,6 +67,7 @@ p {
 button {
     padding: 3px 8px;
     border-radius: 5px;
+    vertical-align: middle;
     font-family: 'Noto Serif SC', serif;
     font-size: 1.125em;
     color: black;
@@ -74,19 +75,39 @@ button {
     border-color: #adadad;
 }
 
-.encode {
+.encode-complex {
+    display: inline-block;
     margin-left: 15%;
+}
+
+.encode-color {
     color: white;
     background-color: black;
     border-color: #333333;
 }
 
-.decode {
+.decode-complex {
+    display: block;
     float: right;
     margin-right: 15%;
+}
+
+.decode-color {
     color: black;
     background-color: white;
     border-color: #cccccc;
+}
+
+.copy-button {
+    padding-top: 5px;
+    padding-bottom: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin: 0 6px;
+}
+
+.material-icons-outlined {
+    font-size: 20px;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -51,3 +51,11 @@ function encode() {
 function decode() {
     plainTextarea.value = b64DecodeUnicode(guatoB64(cipherTextarea.value))
 }
+
+function copyCipher() {
+    navigator.clipboard.writeText(cipherTextarea.value)
+}
+
+function copyPlain() {
+    navigator.clipboard.writeText(plainTextarea.value)
+}
