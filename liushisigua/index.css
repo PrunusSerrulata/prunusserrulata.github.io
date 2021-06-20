@@ -77,7 +77,7 @@ button {
 
 .encode-complex {
     display: inline-block;
-    margin-left: 15%;
+    margin-right: min(150px, 12vw);
 }
 
 .encode-color {
@@ -87,9 +87,8 @@ button {
 }
 
 .decode-complex {
-    display: block;
-    float: right;
-    margin-right: 15%;
+    display: inline-block;
+    margin-left: min(150px, 12vw);
 }
 
 .decode-color {
