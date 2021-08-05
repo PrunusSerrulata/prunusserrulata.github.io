@@ -240,13 +240,13 @@ function encode() {
                 encoder.encode(plainTextarea.value)
             ).then((cipher) => {
                 cipherTextarea.value = b64toGua(btoa(String.fromCharCode(...cipher)))
-            }).catch((ex) => {
+            }).catch((e) => {
                 alert("无法加密。请检查您所输入的内容，以及您的浏览器是否支持此功能。");
-                console.error(ex.message)
+                console.error(e.message)
             });
-        } catch (ex) {
+        } catch (e) {
             alert("无法加密。请检查您所输入的内容，以及您的浏览器是否支持此功能。");
-            console.error(ex.message)
+            console.error(e.message)
         }
     } else {
         plaintext = plainTextarea.value;
@@ -266,8 +266,8 @@ function decode() {
                 Uint8Array.from(atob(b64String).split('').map((c) => c.charCodeAt(0)))
             ).then((cipher) => {
                 plainTextarea.value = decoder.decode(cipher);
-            }).catch((ex) => {
-                switch (ex.message) {
+            }).catch((e) => {
+                switch (e.message) {
                     case "ciphertext too short":
                         alert("密文过短，无法解密。请检查密文是否完整。");
                         break;
@@ -278,14 +278,19 @@ function decode() {
                         alert("无法解密。请检查密文或密码是否正确，以及您的浏览器是否支持此功能。");
                         break;
                 }
-                console.error(ex.message)
+                console.error(e.message)
             });
-        } catch (ex) {
+        } catch (e) {
             alert("无法解密。请检查密文或密码是否正确，以及您的浏览器是否支持此功能。");
-            console.error(ex.message)
+            console.error(e.message)
         }
     } else {
-        plainTextarea.value = b64DecodeUnicode(b64String);
+        try {
+            plainTextarea.value = b64DecodeUnicode(b64String);
+        } catch (e) {
+            alert("解码时发生错误。请确认这段密文是否需要密码来解密。")
+            console.error(e.message)
+        }
     }
 }
 

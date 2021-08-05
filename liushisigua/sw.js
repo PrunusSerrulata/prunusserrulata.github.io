@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'liushisigua_980a2f';
+var CACHE_VERSION = 'liushisigua_7d58d0';
 var CACHE_FILES = [
     '/liushisigua/',
     '/liushisigua/index.html',

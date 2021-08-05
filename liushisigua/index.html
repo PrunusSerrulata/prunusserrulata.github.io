@@ -33,8 +33,8 @@
     </noscript>
     <div class="main">
         <h1>六十四卦</h1>
-        <textarea id="plain" placeholder="箴言" autocomplete="off" spellcheck="false" class="maininput"></textarea>
-        <input id="password" placeholder="长歌怀采薇" autocomplete="off" spellcheck="false" type="text" class="password-input"></input>
+        <textarea id="plain" placeholder="箴言" title="原文" autocomplete="off" spellcheck="false" class="maininput"></textarea>
+        <input id="password" placeholder="长歌怀采薇" title="密码（可选）" autocomplete="off" spellcheck="false" type="text" class="password-input"></input>
         <div class="buttons">
             <div class="encode-complex">
                 <button onclick="encode()" title="将文本编码为六十四卦密文" class="encode-color">↓卜卦</button>
@@ -45,7 +45,7 @@
                 <button onclick="decode()" title="将六十四卦密文解码为原文" class="decode-color">启示↑</button>
             </div>
         </div>
-        <textarea id="cipher" placeholder="卦象" autocomplete="off" spellcheck="false" class="maininput"
+        <textarea id="cipher" placeholder="卦象" title="密文" autocomplete="off" spellcheck="false" class="maininput"
             style="height: 350px;"></textarea>
         <p style="margin-top: 80px;">
             您可以将本工具添加到桌面来离线使用。<br>
