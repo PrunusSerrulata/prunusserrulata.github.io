@@ -20,6 +20,22 @@ p {
     color: black;
 }
 
+textarea, input, button {
+    border-style: solid;
+    border-width: 2px;
+}
+
+button {
+    padding: 3px 8px;
+    border-radius: 5px;
+    vertical-align: middle;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.125em;
+    color: black;
+    background-color: #c6c6c6;
+    border-color: #adadad;
+}
+
 .footer {
     color: gray;
 }
@@ -58,21 +74,27 @@ p {
     border-color: #c6c6c6;
 }
 
+.password-input {
+    width: auto;
+    height: 1.5em;
+    border-radius: 10px;
+    resize: none;
+    font-family: 'Roboto Mono', 'Noto Serif SC', monospace, serif;
+    font-size: 1.125em;
+    color: gray;
+    background-color: #fafafa;
+    border-color: #c6c6c6;
+    margin-top: 10px;
+}
+
+.password-input:placeholder-shown {
+    font-style: italic;
+}
+
 .buttons {
     display: inline-block;
     margin: 20px auto;
     width: 56%;
-}
-
-button {
-    padding: 3px 8px;
-    border-radius: 5px;
-    vertical-align: middle;
-    font-family: 'Noto Serif SC', serif;
-    font-size: 1.125em;
-    color: black;
-    background-color: #c6c6c6;
-    border-color: #adadad;
 }
 
 .encode-complex {
@@ -115,6 +137,7 @@ button {
     .footer { color: gray; }
     .noscript-warn { color: white; }
     .maininput { color: white; background-color: #2d343a; border-color: #505050; }
+    .password-input { background-color: #43505b; border-color: #505050; color: lightgray; }
     button { color: white; background-color: #4e5b65; border-color: #647582; }
 }
 
