@@ -1,4 +1,4 @@
-var CACHE_VERSION = 'accented_english_aeaf46';
+var CACHE_VERSION = 'accented_english_cc7246';
 var CACHE_FILES = [
     '/accented_english/',
     '/accented_english/index.html',
