@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accented English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" type="text/css" href="/accented_english/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/accented_english/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/accented_english/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/accented_english/favicon-16x16.png">
+    <link rel="manifest" href="/accented_english/site.webmanifest">
+    <script src="/accented_english/index.js"></script>
+</head>
+
+<body>
+    <noscript>
+        <style>
+            .main {
+                filter: blur(25px);
+                -webkit-filter: blur(25px);
+            }
+        </style>
+        <div class="noscript-field">
+            <p class="noscript-warn">
+                It seems that your browser doesn't support or disabled Javascript.<br>
+                Please refresh this page, check your settings or use another browser.
+            </p>
+        </div>
+    </noscript>
+    <div class="main">
+        <h1 id="header">Accented English</h1>
+        <textarea id="textinput" placeholder="Long long ago a wise man said so..." title="Your text here" autocomplete="off" spellcheck="false" class="maininput"></textarea>
+        <div class="buttons">
+            <button id="accentuate" onclick="accentuateInput()" title="Change your text into Accented English!">Accentuate</button>
+            <button onclick="copyText()" title="Copy your text" class="function-button"><span class="material-icons-outlined">content_copy</span></button>
+            <button onclick="undo()" title="Turn your text back to normal" class="function-button"><span class="material-icons-outlined">restart_alt</span></button>
+        </div>
+        <p id="tip" style="margin-top: 80px;">
+            You can add this page to your desktop to use it offline.<br>
+        </p>
+        <p id="footer" class="footer">
+            Published under MIT License.<br>
+            By PrunusSerrulata, 2021.
+        </p>
+    </div>
+</body>
+
+</html>
