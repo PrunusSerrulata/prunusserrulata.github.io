@@ -106,5 +106,5 @@ function copyText() {
 }
 
 function undo() {
-    textInput.value = Array.prototype.map.call(textInput.value, c => REVTABLE[c]).join("")
+    textInput.value = Array.prototype.map.call(textInput.value, c => REVTABLE.hasOwnProperty(c)? REVTABLE[c] : c).join("")
 }
